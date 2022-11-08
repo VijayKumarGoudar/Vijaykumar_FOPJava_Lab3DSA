@@ -12,8 +12,7 @@ public class Main {
 			System.out.println("given String " + s1 + " is not balanced");
 		}
 		
-		String s2 ="){]";
-//				"([[{}]])";
+		String s2 ="([[{}]])";
 		
 		if (BalancedString.isStringBalanced(s2)) {
 			System.out.println("given String " + s2 + " is balanced");
