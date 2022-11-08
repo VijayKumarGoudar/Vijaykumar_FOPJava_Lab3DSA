@@ -17,7 +17,7 @@ public class Main {
 		if (BalancedString.isStringBalanced(s2)) {
 			System.out.println("given String " + s2 + " is balanced");
 		} else {
-			System.out.println("given String " + s2 + " is not	 balanced");
+			System.out.println("given String " + s2 + " is not balanced");
 		}
 	}
 }
