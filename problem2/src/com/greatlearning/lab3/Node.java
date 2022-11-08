@@ -1,6 +1,7 @@
-package problem2;
+package com.greatlearning.lab3;
 
 class Node {
+	
 	int data;
 	Node left;
 	Node right;

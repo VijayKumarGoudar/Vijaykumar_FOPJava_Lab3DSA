@@ -1,12 +1,13 @@
-package problem2;
+package com.greatlearning.lab3;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinarySearchTree {
+
 	Node root;
 
-	//Method search for 2nd pairing element if found return true
+	// Method search for 2nd pairing element if found return true
 	public boolean searchElement(Node root, int val) {
 		if (root != null) {
 			if (root.data == val) {
@@ -20,21 +21,27 @@ public class BinarySearchTree {
 		return false;
 	}
 
-	//Method will pick element and search for pair if found method will break and complete.
+	// Method will pick element and search for pair if found method will break and
+	// complete.
 	public void findPair(Node root, int sum) {
 		Queue<Node> queue = new LinkedList<>();
 		queue.add(root);
 		boolean isPairFound = false;
 		while (!queue.isEmpty()) {
 			Node temp = queue.poll();
-			isPairFound = searchElement(root, sum - temp.data);
+
+			if (temp.data != (sum - temp.data))
+				isPairFound = searchElement(root, sum - temp.data);
+
 			if (isPairFound) {
-				System.out.printf("Pair is (%d,%d)",temp.data,(sum-temp.data));
+				System.out.printf("Pair is (%d,%d)", temp.data, (sum - temp.data));
 				break;
 			}
+
 			if (temp.left != null) {
 				queue.add(temp.left);
 			}
+
 			if (temp.right != null) {
 				queue.add(temp.right);
 			}
@@ -43,9 +50,7 @@ public class BinarySearchTree {
 		if (!isPairFound) {
 			System.out.println("Nodes are not found");
 		}
-
 	}
-
 
 	public Node insert(Node root, int data) {
 		Node temp = new Node(data);
